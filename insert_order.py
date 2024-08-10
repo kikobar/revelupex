@@ -9,7 +9,6 @@ def insert_order(reporting_no, order_no, offline_no, created_by, first_opened, l
     sql = """INSERT INTO orders(reporting_no, order_no, offline_no, created_by, first_opened, last_closed, net_sales, tax, final_total, payments_total)
              VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
     
-    vendor_id = None
     config = load_config()
 
     try:
@@ -23,7 +22,6 @@ def insert_order(reporting_no, order_no, offline_no, created_by, first_opened, l
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)    
     finally:
-        #return vendor_id
         print('success')
     
 
