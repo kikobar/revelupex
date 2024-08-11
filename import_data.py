@@ -5,6 +5,7 @@ import shutil
 import re
 from insert_order import insert_order
 from insert_hourly import insert_hourly
+from insert_payment import insert_payment
 
 # Import Oder History
 path = "./upload/Order_History*.csv"
@@ -38,5 +39,17 @@ for filename in glob.glob(path):
             if row[0] != 'Totals':
                 print(row)
                 insert_hourly (date[0], row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+        shutil.move(filename, "history/")
+        
+# Import Payments
+path = "./upload/*.csv"
+for filename in glob.glob(path):
+    print(filename)
+    with open(filename) as file_obj:
+        heading = next(file_obj)
+        reader_obj = csv.reader(file_obj)
+        for row in reader_obj:
+            print(row)
+            insert_payment (row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13])
         shutil.move(filename, "history/")
 
