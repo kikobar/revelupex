@@ -2,6 +2,9 @@
 database.ini
 *.csv
 
+# Git
+*.patch
+
 # ---> Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
