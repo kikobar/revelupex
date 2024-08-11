@@ -4,7 +4,7 @@ from config import load_config
 
 
 def insert_payment(order_no, type, card_type, last_4_cc_digits, date, raw_date, station, employee, transport_id, transaction_status, customer_paid, customer_change, total, rounding_delta):
-    """ Insert a new order into the orders table """
+    """ Insert a new order into the payments table """
 
     sql = """INSERT INTO payments(order_no, type, card_type, last_4_cc_digits, date, raw_date, station, employee, transport_id, transaction_status, customer_paid, customer_change, total, rounding_delta)
              VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
