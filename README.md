@@ -1,11 +1,11 @@
 **Objective**
 
-This Python script extracts data from .csv files created by the Revelup application and post it into a Postgres database.
+This Python script extracts data from `.csv` files created by the Revelup application and post it into a Postgres database.
 
 **Requirements**
 
 * Python installed on the machine running this application.
-* Credentials with writing access to a Postgres database
+* Credentials with writing access to a Postgres database.
 
 **How to run this application**
 
